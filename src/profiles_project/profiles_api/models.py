@@ -36,7 +36,7 @@ class UserProfileManager(BaseUserManager):
 
 
 class UserProfile(AbstractBaseUser, PermissionsMixin):
-    """Represents a "user profile" inside our system."""
+    """Respents a "user profile" inside our system."""
 
     email = models.EmailField(max_length=255, unique=True)
     name = models.CharField(max_length=255)
@@ -59,7 +59,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         return self.name
 
     def __str__(self):
-        """Django uses this when it needs to convert the object to a string."""
+        """Django uses this when it needs to convert the object to a string"""
 
         return self.email
 
@@ -72,6 +72,6 @@ class ProfileFeedItem(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        """Return the model as a string"""
+        """Return the model as a string."""
 
         return self.status_text
